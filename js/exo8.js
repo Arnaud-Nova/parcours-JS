@@ -11,8 +11,20 @@
  */
 
 function getLongestString(arr) {
-
+  var longest = 0;
+  for (var str in arr) {
+    if (arr[str].length > longest) {
+      var longestWord = arr[str];
+      longest = arr[str].length;
+    }
+  }
+  if (longestWord !== undefined) {
+    return longestWord;
+  } else {
+    return false;
+  }
 }
+
 
 
 

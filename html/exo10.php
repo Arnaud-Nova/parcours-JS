@@ -31,12 +31,19 @@ require_once '../inc/functions.php';
  * Toute première étape, pensez à démarrer la session :)
  *
  */
+session_start();
 
 
 function checkStrings() {
+  foreach ($_SESSION['dirty_strings'] as /* $key => */ $string) {
+    if (filter_var($string, FILTER_VALIDATE_EMAIL) !== false) {
+      $_SESSION['clean_emails'][] = $string;
+    } else if (filter_var($string, FILTER_VALIDATE_URL) !== false) {
+      $_SESSION['clean_urls'][] = $string;
+    }
+  }
 
 }
-
-
+  
 
 check(10, checkStrings);
