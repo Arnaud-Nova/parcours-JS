@@ -17,14 +17,18 @@ var calcul = {
 
   numberOne: function(event) {
     calcul.one = event.target.value;
-    if (calcul.one !== '' && calcul.two !== '') {
+    console.log(calcul.one);
+    console.log(calcul.two);
+    if (calcul.one !== undefined && calcul.two !== undefined) {
       calcul.result();
     }
   },
 
   numberTwo: function(event) {
     calcul.two = event.target.value;
-    if (calcul.one !== '' && calcul.two !== '') {
+    console.log(calcul.one);
+    console.log(calcul.two);
+    if (calcul.one !== undefined && calcul.two !== undefined) {
       calcul.result();
     }
   },
@@ -32,7 +36,12 @@ var calcul = {
   result: function() {
     document.querySelector('#result').textContent = '';
     var result = Number(calcul.one) + Number(calcul.two);
-    document.querySelector('#result').textContent = 'Le résultat de la somme est ' + result;
+    if (Number.isInteger(result)) {
+      document.querySelector('#result').textContent = 'Le résultat de la somme est ' + result;
+    } else {
+      document.querySelector('#result').textContent = 'Il ne faut renseigner que des nombres entiers';
+    }
+    
   }
 
 };
