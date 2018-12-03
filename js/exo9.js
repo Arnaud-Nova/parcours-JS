@@ -12,7 +12,18 @@
 
 
 function sum(arr) {
-
+  var result = 0;
+  console.log(arr);
+  for (var nb in arr) {
+    if (arr[nb].length > 1) {
+      
+    }
+    if (Number.isInteger(arr[nb])) {
+      result = result + arr[nb];
+    }
+  }
+  console.log(result);
+  return result;
 }
 
 
