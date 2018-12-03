@@ -5,7 +5,7 @@
  */
 
 function isEven(int) {
-
+  return Number.isInteger(int / 2);
 }
 
 
