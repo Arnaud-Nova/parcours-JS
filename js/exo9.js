@@ -13,16 +13,25 @@
 
 function sum(arr) {
   var result = 0;
-  console.log(arr);
-  for (var nb in arr) {
-    if (arr[nb].length > 1) {
-      
+  for (var index in arr) {
+    if (arr[index].length > 1) {
+      for (var index2 in arr[index]) {
+        if (arr[index][index2].length > 1) {
+          for (var index3 in arr[index][index2]) {
+            if (Number.isInteger(arr[index][index2][index3])) {
+              result = result + arr[index][index2][index3];
+            }
+          }
+        }
+        if (Number.isInteger(arr[index][index2])) {
+          result = result + arr[index][index2];
+        }
+      }
     }
-    if (Number.isInteger(arr[nb])) {
-      result = result + arr[nb];
+    if (Number.isInteger(arr[index])) {
+      result = result + arr[index];
     }
   }
-  console.log(result);
   return result;
 }
 
