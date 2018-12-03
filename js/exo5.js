@@ -5,6 +5,7 @@
  */
 
 function doubleInt(int) {
+  return int * 2;
 
 }
 
