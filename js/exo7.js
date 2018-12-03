@@ -11,7 +11,12 @@
  */
 
 function getExtension(str) {
-
+  if (str.indexOf('.') >= 0) {
+    var cut = str.split('.');
+    return cut[(cut.length - 1)];
+  } else {
+    return false;
+  }
 }
 
 
